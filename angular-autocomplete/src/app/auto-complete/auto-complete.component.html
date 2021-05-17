@@ -1,0 +1,20 @@
+<div (click)="open()" class="item-search-component-small">
+    <div class="item-search">
+        <input [ngModel]="searchText" (ngModelChange)="search($event)" class="search-box" placeholder="Search items..."
+            title="Search for items " />
+
+        <div class="icon-search-wrapper">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <div *ngIf="searchTickers.length && show" (click)="clearEverything()" class="item-search-result">
+        <div *ngFor="let item of searchTickers" class="search-result-item">
+
+
+            <div class="search-result-name">
+                <strong>{{ item?.name }}</strong> |
+            </div>
+        </div>
+    </div>
+</div>
